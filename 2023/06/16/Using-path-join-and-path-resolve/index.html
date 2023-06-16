@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Using path.join and path.resolve | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="What Are File PathsFile paths are exactly what they seem like! They provide a readable way to locate and refer to all the files or directories in your PC.They are of two types: -Absolute File PathsAbs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using path.join and path.resolve">
+<meta property="og:url" content="https://github.com/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/2023/06/16/Using-path-join-and-path-resolve/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="What Are File PathsFile paths are exactly what they seem like! They provide a readable way to locate and refer to all the files or directories in your PC.They are of two types: -Absolute File PathsAbs">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-16T11:21:52.000Z">
+<meta property="article:modified_time" content="2023-06-16T13:15:54.385Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/">Home</a>
+        
+          <a class="main-nav-link" href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/Prafullarajsaxena99/myblogpathJOINpathRESOLVE"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Using-path-join-and-path-resolve" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/2023/06/16/Using-path-join-and-path-resolve/" class="article-date">
+  <time class="dt-published" datetime="2023-06-16T11:21:52.000Z" itemprop="datePublished">2023-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Using path.join and path.resolve
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="What-Are-File-Paths"><a href="#What-Are-File-Paths" class="headerlink" title="What Are File Paths"></a>What Are File Paths</h3><p>File paths are exactly what they seem like! They provide a readable way to locate and refer to all the files or directories in your PC.<br>They are of two types:</p>
+<h4 id="Absolute-File-Paths"><a href="#Absolute-File-Paths" class="headerlink" title="-Absolute File Paths"></a>-Absolute File Paths</h4><p>Absolute file path provide specifies the complete path of the file, irrespective of where you are at in your PC directories.<br>For example, if there is a directory ‘Directory_A’ which contains a ‘Directory_B’ which contains a ‘Directory_C’ and some files, and ‘Directory_A’ is contained in your home folder.<br>Absolute path to a file named ‘file.txt’ contained in ‘Directory C’ will be : <code>/Directory_A/Directory_B/Directory_C/file.txt</code>.</p>
+<h4 id="Relative-File-Paths"><a href="#Relative-File-Paths" class="headerlink" title="-Relative File Paths"></a>-Relative File Paths</h4><p>Relative file paths differ from Absolute file path in way that they work with reference to your current directory, where your script is running.</p>
+<p><code>.</code> is used to represent the present working directory.<br><code>..</code> is used to represent the parent directory of the current directory&#x2F;file.</p>
+<p>Taking the same example as Absolute File Paths, if our current working directory would be Directory C, file path for a file file_A.txt contained in Directory A would look like : <code>../../file_A.txt</code>.</p>
+<h2 id="Path-modules"><a href="#Path-modules" class="headerlink" title="Path modules"></a>Path modules</h2><p>When working with Web development using Node.js, learning about what file paths are and how to use them, becomes a key skill.<br>Path modules provide an simple way to interact with file paths, effectively, efficiently and in an optimized manner.</p>
+<p>Node.js has an in-built core module named <code>path</code> that helps us in doing so! </p>
+<h4 id="The-most-commonly-used-methods-from-path-modules-are"><a href="#The-most-commonly-used-methods-from-path-modules-are" class="headerlink" title="The most commonly used methods from path modules are:"></a>The most commonly used methods from <code>path</code> modules are:</h4><p>-<code>path.join()</code><br>-<code>path.resolve()</code><br>-<code>path.dirname()</code><br>-<code>path.basename()</code></p>
+<p>I’ll be talking about <code>path.join()</code> and <code>path.resolve()</code> methods in this blog.</p>
+<h2 id="Path-join"><a href="#Path-join" class="headerlink" title="Path.join()"></a>Path.join()</h2><p><code>path.join()</code> is used to join&#x2F;concatenate different file path segments in order to create a valid path.  </p>
+<h3 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&#x27;filePath&#x27;);</span><br><span class="line"></span><br><span class="line">let finalPath = path.join(&#x27;/path&#x27;,&#x27;file.txt&#x27;);</span><br><span class="line">//this method provides a path joined with the OS supported seperator, which is then stored in a new variable for further use.</span><br><span class="line"></span><br><span class="line">//if filePath is given as `/Directory_A/Directory_B` , finalPath will be equal to /`Directory_A/Directory_B/file.txt`</span><br><span class="line">console.log(finalPath);</span><br></pre></td></tr></table></figure>
+<h3 id="Examples-of-usage"><a href="#Examples-of-usage" class="headerlink" title="Examples of usage"></a>Examples of usage</h3><h4 id="1-Joining-when-number-of-segments-are-variable"><a href="#1-Joining-when-number-of-segments-are-variable" class="headerlink" title="1. Joining when number of segments are variable"></a>1. Joining when number of segments are variable</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&#x27;filePath&#x27;);</span><br><span class="line"></span><br><span class="line">const segments = [&#x27;filePath&#x27;, &#x27;to&#x27;, &#x27;file.txt&#x27;];</span><br><span class="line">let finalPath = path.join(...segments);</span><br><span class="line">console.log(finalPath);</span><br><span class="line">// Expected Output: filePath/to/file.txt</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="2-Joining-URLs"><a href="#2-Joining-URLs" class="headerlink" title="2. Joining URLs"></a>2. Joining URLs</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&#x27;filePath&#x27;);</span><br><span class="line"></span><br><span class="line">let url = path.join(&#x27;https://www.pathJoinpathResolve.com&#x27;, &#x27;filePath&#x27;, &#x27;file.txt&#x27;);</span><br><span class="line">console.log(url);</span><br><span class="line">// Expected Output: https://www.pathJoinpathResolve.com/path/to/file.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="Path-resolve"><a href="#Path-resolve" class="headerlink" title="Path.resolve()"></a>Path.resolve()</h2><p><code>path.resolve()</code> is used to resolve the file path segments into an absolute path. It keeps adding the path considering them relative, from right to left until it completes creating an absolute path.<br>If the method finds an absolute path, it ignores the resolved segments, and gives back the absolute path.</p>
+<h4 id="Note-If-no-arguments-passed-path-resolve-returns-current-working-directory"><a href="#Note-If-no-arguments-passed-path-resolve-returns-current-working-directory" class="headerlink" title="Note : If no arguments passed, path.resolve() returns current working directory."></a>Note : If no arguments passed, <code>path.resolve()</code> returns current working directory.</h4><p><code>path.resolve()</code> does not work by checking if the file or directory exists or not. It works ob String concatenation.</p>
+<h3 id="Syntax-1"><a href="#Syntax-1" class="headerlink" title="Syntax"></a>Syntax</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const filepath = require(&#x27;filePath&#x27;);</span><br><span class="line"></span><br><span class="line">let finalPath = path.resolve(&#x27;/filePath&#x27;,&#x27;file.txt&#x27;);</span><br><span class="line">console.log(finalPath);</span><br><span class="line">//Expected output : `/filePath/file.txt`</span><br></pre></td></tr></table></figure>
+
+<h3 id="Examples-of-usage-1"><a href="#Examples-of-usage-1" class="headerlink" title="Examples of usage"></a>Examples of usage</h3><h4 id="1-Resolving-Paths-Relatively"><a href="#1-Resolving-Paths-Relatively" class="headerlink" title="1. Resolving Paths Relatively:"></a>1. Resolving Paths Relatively:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&#x27;filePath&#x27;);</span><br><span class="line">let finalPath = path.resolve(directoryName, &#x27;file.txt&#x27;);</span><br><span class="line">//directoryName is a global variable that stores the absolute path of the current module directory.</span><br><span class="line">console.log(finalPath);</span><br><span class="line">//Expected output : `/absolute_path/file.txt`</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="2-Using-parent-Directory-Reference"><a href="#2-Using-parent-Directory-Reference" class="headerlink" title="2. Using parent Directory Reference:"></a>2. Using parent Directory Reference:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&#x27;filePath&#x27;);</span><br><span class="line">let finalPath = path.resolve(&#x27;/filePath&#x27;, &#x27;..&#x27;, &#x27;file.txt&#x27;);</span><br><span class="line">console.log(finalPath);</span><br><span class="line">// Expected Output: `/filePath/file.txt`</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/2023/06/16/Using-path-join-and-path-resolve/" data-id="cliyhctrz0000ca7fbydo0g72" data-title="Using path.join and path.resolve" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/2023/06/16/Using-path-join-and-path-resolve/">Using path.join and path.resolve</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/Prafullarajsaxena99/myblogpathJOINpathRESOLVE/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
